@@ -92,3 +92,10 @@ with form:
             st.toast('Data berhasil ditambahkan ke Google Sheets', icon='🚀')
         else:
             st.error('Data tidak boleh kosong')
+
+st.sidebar.title('About')
+st.sidebar.info(
+    '''
+    This app is created to demonstrate the integration of Streamlit with Google Sheets API.
+    '''
+)
