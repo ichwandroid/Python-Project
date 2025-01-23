@@ -3,6 +3,7 @@ import gspread
 from google.oauth2.service_account import Credentials
 from datetime import datetime
 import pandas as pd
+from vega_datasets import data
 
 # Google Sheets API
 scope = [
@@ -34,6 +35,11 @@ if menu == 'Dashboard':
     # Display the data
     st.write('Data from Google Sheets')
     st.dataframe(df)
+
+    source = df
+
+    st.write('Data from Vega Datasets')
+    st.bar_chart(source, x='Tanggal', y='Jumlah Sepatu Rapi', color='Kelas', stack=False)
 
     # Display the summary
     st.write('Summary')
